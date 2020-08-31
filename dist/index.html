@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的简历</title>
+    <style>* {
+        box-sizing: border-box;
+      }
+      body {
+        background: #eee;
+        margin: 20px, 10px;
+      }
+      article {
+        /* A4纸的大小 */
+        width: 21cm;
+        min-height: 29.7cm;
+        background: white;
+        margin: 0 auto; /*左右居中*/
+        overflow: auto; /*会有滚动条*/
+        padding: 1em;
+      }</style>
+    <style media="print">/*在打印时才有的样式*/
+      body {
+        margin: 0;
+      }
+      .page2 {
+        page-break-before: always; /*在page2之前进行分页*/
+        margin-top: 30px;
+       
+      }</style>
+    <style>body {
+       
+      }
+
+      p {
+        margin: 0.3em 0;
+      }
+      h1 {
+        font-size: 25px;
+        margin-top: 0;
+      }
+      h4,
+      h5,
+      h6 {
+        font-weight: normal; /*指定字体的粗细程度*/
+      }
+      ol,
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      strong {
+        font-weight: normal;
+        color: #f60;
+      }
+      a {
+        color: #999;
+        text-decoration: none;
+        border-bottom: 1px solid;
+      }
+      p,
+      li {
+        color: #666;
+      }
+      strong {
+        font-weight: normal;
+      }
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 0;
+      }
+      .bio {
+        position: relative;
+      }
+      .bio img {
+        position: absolute;
+        top: 0;
+        right: 10px;
+      }</style>
+    <style>.projects {
+      }
+      .projects p {
+        color: #666;
+      }
+      .projects strong {
+        color: #f60;
+      }
+      .projects > ol {
+        margin-top: 0;
+        list-style-position: inside; /*表明无序的点在外面还是缩进到里面*/
+        padding: 0;
+      }
+      .projects > ol > li {
+        margin-bottom: 24px;
+      }
+      .projects > ol > li > header {
+        display: flex;
+        justify-content: space-between;
+      
+   
+      }
+      .projects > ol > li h3 {
+        display: inline-block;
+      }
+     .smallTitle {
+      display: inline-block;
+        color: green
+      }</style>
+    <style>.skills {
+      }
+      #skills {
+        width: 500px;
+        height: 270px;
+      }
+      /*@media CSS @规则 
+      可用于基于一个或多个 媒体查询 的结果来应用样式表的一部分。*/
+      @media print {
+        
+        #skills {
+          display: none;
+        }
+      }
+      .skills > .wrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+      .skills > .wrapper > :first-child {
+        margin-right: 24px;
+      }
+      .skills > .wrapper > #skills {
+      }
+      .skills > .wrapper strong {
+        color: #f60;
+      }
+      .skills > .wrapper > ul > li {
+        line-height: 1.2;
+        margin-bottom: 8px;
+      }
+      header{
+        margin-top: 10px;
+      }</style>
+    <style>.openSource {
+      }
+      .openSource > h2 {
+      }
+      .openSource header img {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .openSource > ul {
+      }
+      .openSource > ul > li {
+        margin-bottom: 24px;
+      }
+      .openSource header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+       
+      }
+      .openSource h3 {
+      }</style>
+ 
+
+    <style>/*媒体查询*/
+      @media (max-width: 500px) {
+        body {
+          margin: 0;
+        }
+        article {
+          width: auto;
+          height: auto;
+        }
+        .bio img {
+          display: none; /*不显示*/
+        }
+        .skills.wrapper {
+          flex-direction: column;
+        }
+        #skills {
+          width: auto;
+        }
+      }
+      .blank{
+        width: 100%;
+        height:489px;
+        background: white;
+      }</style>
+  </head>
+  <body>
+    <article>
+      <hr>
+      <section class="bio">
+        <h1>杨英书</h1>
+        <img src="/一寸照片杨英书.c6ebbe96.jpg" alt="" width="71px" height="99px">
+        <p>女 | 24 | 前端开发工程师</p>
+        <p>
+          手机号：13810978327 | 微信号：13810978327 | 邮箱：199605@outlook.com
+        </p>
+      </section>
+      <hr>
+      <section class="education">
+        <h2>教育背景</h2>
+        <p>
+          <span><time>2018.06年</time>~<time>2021.01年</time> </span>
+          &nbsp;&nbsp;&nbsp;北京航空航天大学&nbsp;&nbsp;&nbsp;电子信息工程学院&nbsp;&nbsp;&nbsp;电子与通信工程专业&nbsp;&nbsp;&nbsp;硕士
+        </p>
+      </section>
+      <hr>
+      <section class="projects">
+        <h2>项目经历</h2>
+        <ol>
+          <li>
+            <header>
+              <h3>番茄记账</h3>
+              <!-- <span>
+                <a href="#">源码链接</a>
+                <a href="#">项目预览</a>
+              </span> -->
+            </header>
+            <p>
+              <span class="smallTitle">项目简介：</span>番茄记账是一款基于<strong>Vue</strong> /
+              <strong>Vue Router</strong> /
+              <strong>Vuex</strong>的应用开发软件，可以进行选择“支出”和“收入”选项添加标签并记录费用，
+              并且可以对每周或者每个月的费用进行统计。主要使用
+              <strong>TypeScript</strong>语言进行开发，用到了
+              <strong>Component</strong>/
+              <strong>Prop</strong>等装饰器语法。开发过程中遇到了遇到了很多关于
+              <strong>webpack</strong>配置问题，以及Vue和Typescript相互引用组合带来的，
+              通过查阅资料一一解决。
+            </p><p>
+              <span class="smallTitle">项目收获：</span>
+              通过亲自动手开发该项目，更清楚拿到设计稿后，应该如何进行一步步的页面实现，
+              更熟练的掌握了Vue的使用，包括VueCli，以及Vue Router等，
+              更清楚<strong>TypeScript语言与JavaScript的区别</strong>,Typescript需要每次指明数据类型，JavaScript则不需要。</p>
+            <p></p>
+            
+          </li>
+          <li>
+            <header>
+              <h3>奔跑的狗狗</h3>
+              <span>
+                <!-- <a
+                  href="https://github.com/KerryYang1996/Project_dog/tree/master/src"
+                  >源码链接</a
+                >
+                <a href="http://kerryyang1996.top/Project_dog/dist/index.html"
+                  >项目预览</a
+                > -->
+              </span>
+            </header>
+            <p> 
+              <span class="smallTitle">项目介绍：</span>这是一个基于<strong>JavaScript </strong>和
+              <strong>CSS</strong>语言开发的小项目，通过JS实现动态写入HTML和CSS，在页面展示代码动态写入和柯基同步实现的过程，
+              同时可以选择快速/中速/慢速写入代码，也可以点击暂定按钮，暂停代码写入。
+              
+            </p>
+            <p><span class="smallTitle"> 项目收获：</span>
+              通过这个小项目自己更熟悉JS相关中<strong>inner.HTML</strong>以及<strong>inner.Text</strong>的使用，以及两者的区别，可以通过<strong>setTimeout</strong>设置播放速度，通过<strong>clearTimeout</strong>实现暂停。也更清楚CSS中<strong>animation</strong>/<strong>transform</strong>如何实现动画效果</p>
+          </li>
+          <li>
+            <header>
+              <h3>前航站点</h3>
+              <!-- <span>
+                <a href="https://github.com/KerryYang1996/nav-1/tree/master/src"
+                  >源码链接</a
+                >
+                <a href="http://kerryyang1996.top/nav-1/src/index.html"
+                  >项目预览</a
+                >
+              </span> -->
+            </header>
+            <p><span>项目简介：</span>
+              该项目是在学习<strong>jQuery库</strong>时开发的一个小项目，主要有输入框和搜索按钮，
+              在输入框输入想要搜索内容就可以自动跳转到百度搜索界面，下面可以点击添加网址，在弹出框中输入常用网址，将常用网址放在搜索框下面，方便以后使用</p>
+              <P><span>项目收获：</span>通过编写这个小项目对jQuery的语法更加了解，添加页面时，通过<strong>insertBefore</strong>，将新添加的页面作为新节点push
+              到hashMap中最后一个节点的前面，收藏节点均已大写的首字母作为图标存储，
+              将鼠标放在收藏网页上时，右上角会出现x图标，点击可删除收藏网址，是通过<strong>阻止冒泡机制</strong>实现该功能，
+              点击收藏网址，可通过<strong>window的open方法</strong>跳转到相应节点的url打开</P>
+            
+             </li>
+          <li>
+            <header>
+              <h3>手写DOM库</h3>
+              <!-- <span>
+                <a href="https://github.com/KerryYang1996/nav-1/tree/master/src"
+                  >源码链接</a
+                >
+                <a href="http://kerryyang1996.top/nav-1/src/index.html"
+                  >项目预览</a
+                >
+              </span> -->
+            </header>
+            <p><span>项目简介：</span>
+              在学习DOM时，为了能够更熟练的掌握DOM的API，
+              自己手动封装了一个DOM库，实现了元素的<strong>增、删、改、查以及事件委托</strong>等功能
+      
+              </p></li>
+              <li style="page-break-before: always;">
+                <h3 class="page2">学习心得</h3>
+                <p>在整个学习过程中共写了二十余篇博客，将不懂的以及容易犯的错误，均已博客的形式记录下来，方便后期查看</p>
+           
+              </li>
+        </ol>
+      </section>
+      <hr>
+      <section class="skills">
+        <h2>技能</h2>
+        <div class="wrapper">
+          <!-- <div id="skills"></div> -->
+          <ul>
+            <li>熟悉页面制作过程，可以完美实现设计稿的页面设计</li>
+            <li>熟练掌握Vue框架的使用</li>
+            <li>熟悉Typescript的使用</li>
+            <li>熟悉jQuery库和DOM库的常用API</li>
+            <li>熟悉ES6，CSS3，HTML5的语法</li>
+            <li>熟悉基本数据结构与算法</li>
+            <li>了解node.js</li>
+            <li>英语CTE6：464，有良好的听说读写能力，参加了Toastmaster英语演讲社</li>
+          </ul>
+        </div>
+      </section>
+      <br>
+      <hr>
+      <section class="others">
+        <h2>个人兴趣爱好</h2>
+        <ul>
+          <li> 爬山：喜欢每次爬到山顶的感觉</li>
+          <li>骑行：喜欢欣赏旅途中的风景</li>
+          <li>读书：开阔自己看待事情的角度</li>
+          <li>摄影：喜欢记录生活中美好的风景</li>
+          
+        </ul>
+        <hr>
+      </section>
+      <div class="blank">
+        
+      </div>
+     
+    </article>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0-alpha.1/echarts.min.js"></script>
+    <script src="/main.1f19ae8e.js"></script>
+  </body>
+</html>
